@@ -19,9 +19,6 @@ export default class GameFrame extends React.Component {
 
     _handleSubmit(data){
         console.log('The user guessed:', data);
-        var newStateArray = this.state.guessesArray.slice();
-        newStateArray.push(data);
-        console.log('the guesses are:', newStateArray);
 
         
     }
@@ -36,7 +33,7 @@ export default class GameFrame extends React.Component {
         return (
             <div className="game-frame">
                 <h2>Hot or Cold</h2>
-                <GuessBox _handleSubmitButton={ this._handleSubmit } array={this.guessesArray}/>
+                <GuessBox _handleSubmitButton={e => this._handleSubmit } array={this.guessesArray}/>
                 <PreviousList />
                 <ResultBox />
             </div>
